@@ -16,3 +16,12 @@
 - 👤 [Explore the creator's projects](https://omgithub.com/mohammedmadpoly1998-dotcom).
 - 🌍 [Create with OMGithub](https://omgithub.com).
 <!-- omgithub:readme:end -->
+
+## Run locally
+
+Open `index.html` in a modern browser, or serve this folder with any static web server (for example, `python3 -m http.server 8000`). No build step or external assets are required.
+
+## Controls
+
+- **Desktop:** A/D or ←/→ to move, Space/W/↑ to jump (press again to double-jump), X/J to fire a pulse, Esc to pause.
+- **Touch:** Use the on-screen joystick, **JUMP**, and **PULSE** buttons. Collect at least 20 crystals before entering the gate.
