@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#080b1b" />
+  <title>NEON//RELAY — Crystal Run</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="game-shell" id="gameShell">
+    <canvas id="game" aria-label="Neon Relay side-scrolling platform game"></canvas>
+    <div class="vignette" aria-hidden="true"></div>
+    <header class="topbar" id="topbar">
+      <a class="brand" href="#" aria-label="Neon Relay home"><span class="brand-mark">N<span>✦</span></span><span class="brand-name">NEON<span>//</span>RELAY</span></a>
+      <div class="mission"><span class="live-dot"></span><span>SECTOR 07 <i>·</i> CRYSTAL RUN</span></div>
+      <button class="icon-button pause-button" id="pauseButton" aria-label="Pause game" title="Pause">Ⅱ</button>
+    </header>
+    <section class="hud" id="hud" aria-label="Game status">
+      <div class="hud-card crystal-card"><div class="hud-label"><span class="tiny-gem">◆</span> ENERGY CELLS</div><div class="crystal-count"><strong id="crystalCount">00</strong><span>/ 20</span></div><div class="meter"><span id="crystalMeter"></span></div></div>
+      <div class="hud-card health-card"><div class="hud-label">INTEGRITY <span id="healthText">03 / 03</span></div><div class="hearts" id="hearts" aria-label="3 hearts"><span>♥</span><span>♥</span><span>♥</span></div></div>
+      <div class="hud-card progress-card"><div class="hud-label">GATE DISTANCE</div><div class="progress-line"><span id="distanceText">0%</span><div class="meter"><span id="distanceMeter"></span></div></div></div>
+    </section>
+    <div class="toast" id="toast" aria-live="polite"></div>
+    <div class="mobile-controls" id="mobileControls" aria-label="Touch controls">
+      <div class="stick-zone" id="stickZone"><div class="stick-base"><div class="stick-knob" id="stickKnob"></div></div><span class="control-caption">MOVE</span></div>
+      <div class="action-controls"><button class="touch-button attack-button" id="attackButton" aria-label="Attack"><span class="attack-icon">✦</span><small>PULSE</small></button><button class="touch-button jump-button" id="jumpButton" aria-label="Jump"><span>↑</span><small>JUMP</small></button></div>
+    </div>
+    <section class="screen visible" id="startScreen" aria-modal="true" role="dialog">
+      <div class="screen-panel intro-panel">
+        <div class="eyebrow"><span></span> A NEON FRONTIER ARCADE</div>
+        <h1>LIGHT THE<br><em>WAY HOME.</em></h1>
+        <p class="intro-copy">The relay is dark. Bring back <b>20 energy cells</b> and outrun the machines before the sector goes cold.</p>
+        <div class="mission-stats"><div><strong>20</strong><span>CELLS TO FIND</span></div><i></i><div><strong>03</strong><span>HEARTS LEFT</span></div><i></i><div><strong>01</strong><span>CHECKPOINT</span></div></div>
+        <button class="primary-button" id="startButton"><span>START RUN</span><b>↗</b></button>
+        <div class="key-hint">MOVE <kbd>A</kbd><kbd>D</kbd> <span>·</span> JUMP <kbd>SPACE</kbd> <span>·</span> PULSE <kbd>J</kbd></div>
+      </div>
+      <div class="screen-art"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="art-crystal">◆</div><div class="art-caption">FIELD NOTE <span>07.24</span><br><b>DON'T LOOK DOWN.</b></div></div>
+    </section>
+    <section class="screen hidden" id="pauseScreen" aria-modal="true" role="dialog">
+      <div class="screen-panel compact-panel"><div class="eyebrow"><span></span> SECTOR 07</div><h2>RUN<br><em>PAUSED.</em></h2><p>The relay can wait. The machines can't.</p><button class="primary-button" id="resumeButton"><span>BACK TO IT</span><b>↗</b></button><button class="text-button" id="pauseRestart">RESTART RUN</button></div>
+    </section>
+    <section class="screen hidden" id="endScreen" aria-modal="true" role="dialog">
+      <div class="screen-panel compact-panel"><div class="eyebrow" id="endEyebrow"><span></span> RUN COMPLETE</div><h2 id="endTitle">YOU'RE<br><em>THE SPARK.</em></h2><p id="endCopy">The relay is alive again. Nice work, little bot.</p><div class="result-line"><span>CELLS RECOVERED</span><b id="resultCount">20 / 20</b></div><button class="primary-button" id="restartButton"><span>RUN IT BACK</span><b>↻</b></button></div>
+    </section>
+    <div class="screen hidden" id="rotateNotice"><div class="rotate-card"><span>↻</span><b>TURN YOUR DEVICE</b><small>NEON//RELAY PLAYS BEST IN LANDSCAPE</small></div></div>
+    <footer class="bottom-note"><span>© 2089 NEON FRONTIER</span><span>RUN <b id="runTime">00:00</b></span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
